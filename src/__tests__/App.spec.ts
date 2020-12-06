@@ -71,46 +71,46 @@ describe('App', () => {
     expect(response.status).toBe(400);
   });
 
-  // it('should be able to create a new product', async () => {
-  //   const response = await request(app).post('/products').send({
-  //     name: 'Produto 01',
-  //     price: 500,
-  //     quantity: 50,
-  //   });
-  //
-  //   expect(response.body).toEqual(
-  //     expect.objectContaining({
-  //       name: 'Produto 01',
-  //       price: 500,
-  //       quantity: 50,
-  //     }),
-  //   );
-  // });
-  //
-  // it('should not be able to create a duplicated product', async () => {
-  //   const product = await request(app).post('/products').send({
-  //     name: 'Produto 01',
-  //     price: 500,
-  //     quantity: 50,
-  //   });
-  //
-  //   expect(product.body).toEqual(
-  //     expect.objectContaining({
-  //       name: 'Produto 01',
-  //       price: 500,
-  //       quantity: 50,
-  //     }),
-  //   );
-  //
-  //   const response = await request(app).post('/products').send({
-  //     name: 'Produto 01',
-  //     price: 500,
-  //     quantity: 50,
-  //   });
-  //
-  //   expect(response.status).toBe(400);
-  // });
-  //
+  it('should be able to create a new product', async () => {
+    const response = await request(app).post('/products').send({
+      name: 'Produto 01',
+      price: 500,
+      quantity: 50,
+    });
+
+    expect(response.body).toEqual(
+      expect.objectContaining({
+        name: 'Produto 01',
+        price: 500,
+        quantity: 50,
+      }),
+    );
+  });
+
+  it('should not be able to create a duplicated product', async () => {
+    const product = await request(app).post('/products').send({
+      name: 'Produto 01',
+      price: 500,
+      quantity: 50,
+    });
+
+    expect(product.body).toEqual(
+      expect.objectContaining({
+        name: 'Produto 01',
+        price: 500,
+        quantity: 50,
+      }),
+    );
+
+    const response = await request(app).post('/products').send({
+      name: 'Produto 01',
+      price: 500,
+      quantity: 50,
+    });
+
+    expect(response.status).toBe(400);
+  });
+
   // it('should be able to create a new order', async () => {
   //   const product = await request(app).post('/products').send({
   //     name: 'Produto 01',
