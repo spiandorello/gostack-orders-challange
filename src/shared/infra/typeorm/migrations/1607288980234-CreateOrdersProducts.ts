@@ -23,11 +23,13 @@ class CreateOrdersProducts1607288980234 implements MigrationInterface {
           },
           {
             name: 'price',
-            type: 'numeric',
+            type: 'decimal',
+            precision: 10,
+            scale: 2,
           },
           {
             name: 'quantity',
-            type: 'numeric',
+            type: 'int',
           },
           {
             name: 'created_at',
